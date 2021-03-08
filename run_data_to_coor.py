@@ -77,13 +77,30 @@ def write_cryolobox(particles, particle_count_cutoff):
     print('boxfiles written for all micrographs with more than', particle_count_cutoff, 'particles')
     print(mcount, 'micrographs, with', pcount, 'particles')
 
+    
+def write_topaztxt(particles, particle_count_cutoff):
+    pcount, mcount = 0,0
+    with open('topaz_coordinate_table.txt', 'w') as t:
+        t.write('image_name\tx_coord\ty_coord\tscore')
+        for mic, coors in particles.items():
+            if len(coors) < particle_count_cutoff:
+                continue
+            mcount += 1
+            for coor in coors:
+                t.write('\n'+mic+'\t'+coor[0]+'\t'+coor[1]+'\t2')
+                pcount += 1
+    print('written ', pcount, 'particles from', mcount, 'micrographs to topaz_coordinate_table.txt')
+
+    
+    
                 
 particles = parse_rundatastar(file)
 
+
+#--------------CHANGE HASHED LINE TO ALTER OUTPUT COORDINATE TYPE----------------#
 #write_manualpickstar(particles)
-
-write_cryolobox(particles, particle_count_cutoff)
-
+#write_cryolobox(particles, particle_count_cutoff)
+write_topaztxt(particles, particle_count_cutoff)
 
 
 
