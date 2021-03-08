@@ -4,10 +4,9 @@
 Created on Wed Dec 23 09:54:40 2020
 @author: jonathan
 
-takes a run_data.star file and boxsize; outputs a set of relions _manualpick.star, or .box files that have a particle number above the specified particle count
+takes a run_data.star file and boxsize; outputs a set of relions _manualpick.star, or .box files (or topaz coordinate .txt file) that have a particle number above the specified particle count, 
 
 """
-
 
 #--------------------
 #PARAMETERS TO SET
