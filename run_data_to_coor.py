@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Wed Dec 23 09:54:40 2020
+Created on Wed Dec 23 2020
 @author: jonathan
 
 takes a run_data.star file and boxsize; outputs a set of relions _manualpick.star, or .box files (or topaz coordinate .txt file) that have a particle number above the specified particle count, 
@@ -59,8 +59,8 @@ def write_manualpickstar(particles):
         print('written', len(coor_list), 'particles to', filename)
         
 def write_cryolobox(particles, particle_count_cutoff):
-    boxx, boxy = boxsize
-    boxx, boxy = str(boxx), str(boxy)
+    boxxi, boxyi = boxsize
+    boxx, boxy = str(boxxi), str(boxyi)
     pcount, mcount = 0,0
     for micrograph, coor_list in particles.items():
         filename = micrograph+'.box'
@@ -71,7 +71,7 @@ def write_cryolobox(particles, particle_count_cutoff):
             for coor in coor_list:
                 pcount += 1
                 x,y = coor
-                boxpick.write('\n'+str(int(float(x)-70))+'\t'+str(int(float(y)-70))+'\t'+boxx+'\t'+boxy)
+                boxpick.write('\n'+str(int(float(x)-boxxi/2))+'\t'+str(int(float(y)-boxyi/2))+'\t'+boxx+'\t'+boxy)
         print('written', len(coor_list), 'particles to', filename)
     print('boxfiles written for all micrographs with more than', particle_count_cutoff, 'particles')
     print(mcount, 'micrographs, with', pcount, 'particles')
