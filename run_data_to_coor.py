@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Wed Dec 23 2020
-@author: jonathan
+Author: Jonathan Machin
 
 takes a run_data.star file and boxsize; outputs a set of relions _manualpick.star, or .box files (or topaz coordinate .txt file) that have a particle number above the specified particle count, 
 
