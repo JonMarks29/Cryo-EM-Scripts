@@ -7,4 +7,5 @@ Usage: class3d_parameter_converge.py [-h] [-d DIRECTORY] [-plot PLOT]
 defocus_particle_filter.py: Reads a particle.star file and generates a new file with only the particles in the specified defocus window.
 Usage: defocus_particle_filter.py [-h] [-f RUNFILE] [-cutoff DEFOCUS_CUTOFF]
 
-run_data_to_coor.py: Takes a run_data.star file and boxsize; outputs a set of relions manualpick.star, or .box files that have a particle number above the specified particle count. File, boxsize, particle number cut-off are defined at top of script
+coordinate_convert.p: Facilitates the conversion between .star, manualpick.star, box files and topaz .txt particle coordinate formats. Provides options for thresholding the particles written out based on number of micrographs, number of particles and particle count per micrograph
+usage: coordinate_convert.py [-h] -r READ -w WRITE [-f FILE] [-d DIR] [-o OUTPUT] [-ctf CTF_MICS] [-b BOXSIZE] [-s SCALE] [-max MAX_PARTICLES] [-cutoff PARTICLE_COUNT_CUTOFF]  [-max_mic MAX_MICROGRAPHS]
