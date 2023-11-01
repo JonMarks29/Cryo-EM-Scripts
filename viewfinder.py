@@ -21,7 +21,7 @@ x-y position corresponds to the stage at time of collection
 
 Usage:
 python3 viewfinder.py raw_data_directory particle_starfile1, particle_starfile2...
-eg: python3 viewfinder.py /astbury/Data/Krios2-F4/bsijh/05082022_54msKtrA/Images-Disc1/ particles.star
+eg: python3 viewfinder.py /astbury/Data/Krios2-F4/bsijh/05082022_54ms/Images-Disc1/ particles.star
 
 assumes that the xml files remain in the EPU raw data directory structure (i.e. GridSquare/Data/*xml)
 can handle an arbitrary number of particles.star files, but these should all have different names
