@@ -4,8 +4,6 @@
 
 
 import sys
-sys.path.append("/astbury/Users/bsjma/scripts/")  # needed for local copy of xmltodict, starfile
-sys.path.append("/astbury/Users/bsjma/scripts/starfile")
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -13,11 +11,6 @@ import xmltodict
 import os
 import random
 import starfile
-
-# force xmltodict location and confirm it has imported properly
-xmltodict.__file__ = "/astbury/Users/bsjma/scripts/xmltodict/xmltodict.py"
-print(xmltodict.__file__)
-
 
 plt.rcParams['figure.dpi'] = 300
 
