@@ -1,6 +1,11 @@
 # Cryo-EM-Scripts
 Short scripts for EM data
 
+**relion_exclude_tilts_handler.py**
+Converts WarpTools directory tomostar to relion starfile and directory structure for running ExcludeTilts in relion, and then converts back to WarpTools tomostar for aligning/reconstruction without the excluded tilt views. 
+Usage: python3 relion_exclude_tilts_handler.py <option> <pixel_size>
+
+
 **class3d_parameter_converge.py**
 
 Reads the model.star file of all iterations in Class3D directory and exracts asked for model parameter. Prints table of iterations by class number to console and generates plot of how the asked for parameter changes over iterations for each model.
